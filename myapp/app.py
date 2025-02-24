@@ -46,7 +46,7 @@ def process_table(process_db):
 
     return conv_tables
 
-ui.panel_title("SQLite file reader")
+ui.panel_title("SQLite file reader [ak]")
 ui.input_file("file1", "Choose a .db File", accept=[".db"], multiple=False)
 
 
@@ -64,7 +64,7 @@ def txt():
 
         db.close()
 
-        return_table = pd.concat([process_table2(table) for table in pd_tables])
+        return_table = pd.concat([process_table(table) for table in pd_tables])
         return "File Ready, Please click Download"
 
 @render.download(filename=f"{datetime.today().strftime('%Y-%m-%d %H:%M:%S')}.csv")
